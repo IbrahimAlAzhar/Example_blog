@@ -1,0 +1,33 @@
+{% extends "authentication/base.html" %}
+
+{% block title %} All Posts {% endblock %}
+
+{% block content %}
+
+    {% for todo in posts %} <!--return posts which means queryset by each page(paginated) -->
+        <div class="card"> <!--bootstrap build in components cards for customize articles -->
+            <div class="card-header"> <!--for heading purpose -->
+                <div>
+                        <a href="#">
+                 </div>
+                <span class="font-weight-bold"> <a href="{% url 'post_details' todo.id %}"> {{ todo.title }} </a> </span> &middot; <!--for bold article title then set a dot in mid point-->
+                <span class="text-muted">by {{ todo.owner }} | {{ todo.date_added }}</span> <!--text muted is dim text -->
+
+            </div>
+            <div class="card-body"> <!--for body part of article -->
+                {{ todo.description }}
+                <a href="{% url 'post_details' todo.id %}">Detail</a> | <!--need a parameter which is pk to u r l.py file -->
+
+            </div>
+            <div class="card-footer"> <!--footer div class-->
+               <!--take the all comments of a current article,comments is related name where returns all instances of comment model,all returns all of comment of this article  -->
+
+            </div>
+
+        </div>
+        <br/>
+    {% endfor %}
+
+
+{% endblock %}
+

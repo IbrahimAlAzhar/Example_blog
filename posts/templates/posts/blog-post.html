@@ -1,0 +1,14 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+<div class="article-entry">
+    <!--here pass 'object' from function based detail view -->
+    <h2>{{ post.title }}</h2> <!--in class based detailview pass object (build in) -->
+    <p>{{ post.owner }} | {{ post.date_added }}</p>
+    <p>{{ post.description }}</p>
+</div>
+
+
+<p>Back to <a href="{% url 'posts' %}">Blog</a>.</p>
+{% endblock content %}
+

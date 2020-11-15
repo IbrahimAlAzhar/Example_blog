@@ -1,0 +1,9 @@
+{% extends "authentication/base.html" %}
+{% block content %}
+  <form method="post" action="{% url 'login' %}">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button name="submit">login</button>
+       <input type="hidden" name="next" value="{% url 'posts' %}"/> <!--this input type is using for after authentication then it redirect to 'index' url means homepage,we can also define 'LOGOUT_REDIRECT' in setting.py file -->
+   </form>
+{% endblock %}

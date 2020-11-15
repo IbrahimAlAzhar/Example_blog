@@ -1,0 +1,8 @@
+{% extends "authentication/base.html" %}
+
+{% block content %}
+   <h1>Logged out</h1>
+<p> You have been successfully logged out.You can <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>  </p> <!--the login u r l is django build in -->
+<p>Create a New Account</p>
+<a href="{% url 'register' %}" class="btn btn-primary ml-2">Sign up</a> <!--only signup u r l we create -->
+{% endblock %}
